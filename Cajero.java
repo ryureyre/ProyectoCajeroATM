@@ -38,6 +38,22 @@ public class Cajero implements Transacciones {
         return tran;
     }
 
+    public void imprimirTicket(Cliente cliente, Transaccion tran) {
+        String tipo;
+        if (tran.getTipo() == 1) {
+            tipo = "Retiro";
+        } else {
+            tipo = "Transferencia";
+        }
+
+        System.out.println("\n===============TICKET===============");
+        System.out.println("=======Banco: " + banco + "========");
+        System.out.println("Cliente: " + cliente.getNombre());
+        System.out.println("Transaccion: " + tipo);
+        System.out.println("Monto: " + tran.getMonto());
+        System.out.println("====================================");
+    }
+
     public String getLocalizacion() {
         return localizacion;
     }
